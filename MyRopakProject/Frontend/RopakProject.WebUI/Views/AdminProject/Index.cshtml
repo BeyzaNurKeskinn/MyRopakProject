@@ -1,0 +1,31 @@
+﻿@model List<ResultProjectDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Makine Numarası</th>
+        <th>Makine Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.ProjectNumber</td>
+            <td>@item.Title</td>
+            <td><a href="/AdminProject/DeleteProject/@item.ProjectID" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
+            <td><a href="/AdminProject/UpdateProject/@item.ProjectID" class="btn mb-1 btn-rounded btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminProject/AddProject" class="btn mb-1 btn-rounded btn-outline-info">Yeni proje Girişi</a>
+
