@@ -14,7 +14,7 @@ namespace RopakProject.DataAccessLayer.Concreate
       
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-GAAA35E;initial catalog=ApiDb;integrated security=true");
+            optionsBuilder.UseSqlServer("server="veritabanınız";initial catalog=ApiDb;integrated security=true");
         }
 
         public DbSet<Project> Projects { get; set; }
